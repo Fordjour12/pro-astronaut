@@ -26,7 +26,17 @@ jobs:
           workload_identity_provider: '${{secrets.WIF_PROVIDER}}'
           service_account: '${{secrets.SERVICE_ACCOUNT}}'
 
-      # Authenticate Docker to Google Cloud Artifact Registry
+      # Create Artifact Repository
+      - name: Create Artifact Repository
+        id: artifactrepo
+        run: |-
+              gcloud artifacts repositories create "${{ vars.ARTIFACT_REPOSITORY_NAME }}" \
+                --repository-format=docker \
+                --location="${{ vars.GCP_LOCATION }}" \
+                --description="Docker images for ${{ vars.GCP_SERVICE_NAME }}" \
+                --format="json"
+
+      # Authenticate Docker to Google Cloud Artifact Registry, and then build and push image
       - name: Docker Auth
         id: docker-auth
         run: |-
@@ -39,6 +49,8 @@ jobs:
           docker push "${{ vars.GCP_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPOSITORY_NAME }}/${{ vars.GCP_SERVICE_NAME }}:${{ github.sha }}"
 
       # END - Docker auth and build
+
+      # Deploy to Cloud Run
       - name: Deploy to Cloud Run
         id: deploy
         uses: google-github-actions/deploy-cloudrun@v2
