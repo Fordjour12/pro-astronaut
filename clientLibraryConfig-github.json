@@ -4,6 +4,7 @@
   "audience": "//iam.googleapis.com/projects/1089863774455/locations/global/workloadIdentityPools/portfolio-actions/providers/github",
   "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
   "token_url": "https://sts.googleapis.com/v1/token",
+  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/pro-astronaut-ptf@portfolio-projects-437015.iam.gserviceaccount.com:generateAccessToken",
   "credential_source": {
     "file": "./",
     "format": {
