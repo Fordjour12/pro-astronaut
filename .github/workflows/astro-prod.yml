@@ -27,14 +27,14 @@ jobs:
           service_account: '${{secrets.SERVICE_ACCOUNT}}'
 
       # Create Artifact Repository
-      - name: Create Artifact Repository
-        id: artifactrepo
-        run: |-
-              gcloud artifacts repositories create "${{ vars.ARTIFACT_REPOSITORY_NAME }}" \
-                --repository-format=docker \
-                --location="${{ vars.GCP_LOCATION }}" \
-                --description="Docker images for ${{ vars.GCP_SERVICE_NAME }}" \
-                --format="json"
+      # - name: Create Artifact Repository
+      #   id: artifactrepo
+      #   run: |-
+      #         gcloud artifacts repositories create "${{ vars.ARTIFACT_REPOSITORY_NAME }}" \
+      #           --repository-format=docker \
+      #           --location="${{ vars.GCP_LOCATION }}" \
+      #           --description="Docker images for ${{ vars.GCP_SERVICE_NAME }}" \
+      #           --format="json"
 
       # Authenticate Docker to Google Cloud Artifact Registry, and then build and push image
       - name: Docker Auth
