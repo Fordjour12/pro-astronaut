@@ -6,15 +6,15 @@ on:
       - main
 
 jobs:
-  deploy:
+  job_id: 
+    # ...
+
+    runs-on: 'ubuntu-latest'
+
     permissions:
       contents: 'read'
       id-token: 'write'
-    with:
-      environment: production
-    secrets: inherit
 
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,14 +23,14 @@ jobs:
         id: auth
         uses: 'google-github-actions/auth@v2'
         with:
-          workload_identity_provider: {{secrets.WIF_PROVIDER}}
-          service_account: {{secrets.SERVICE_ACCOUNT}}
+          workload_identity_provider: '${{secrets.WIF_PROVIDER}}'
+          service_account: '${{secrets.SERVICE_ACCOUNT}}'
 
       # Authenticate Docker to Google Cloud Artifact Registry
       - name: Docker Auth
         id: docker-auth
         run: |-
-          gcloud --quiet auth configure-docker ${{vars.GCP_LOCATION}}-docker.pkg.dev
+          gcloud --quiet auth configure-docker '${{vars.GCP_LOCATION}}-docker.pkg.dev'
 
       - name: Build Container & deploy to Artifact Registry
         run: |-
@@ -44,7 +44,7 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v2
         with:
           service: ${{ vars.GCP_SERVICE_NAME }}
-          region: ${{ vars.GCP_REGION }}
+          region: ${{ vars.GCP_LOCATION }}
           # NOTE: If using a pre-built image, update the image name here
           image: ${{ vars.GCP_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPOSITORY_NAME }}/${{ vars.GCP_SERVICE_NAME }}:${{ github.sha }}
 
