@@ -6,14 +6,14 @@ on:
       - main
 
 jobs:
-  astro-prod: 
+  astro-prod:
     # ...
 
-    runs-on: 'ubuntu-latest'
+    runs-on: "ubuntu-latest"
 
     permissions:
-      contents: 'read'
-      id-token: 'write'
+      contents: "read"
+      id-token: "write"
 
     steps:
       - name: Checkout
@@ -21,10 +21,10 @@ jobs:
 
       - name: Google Auth
         id: auth
-        uses: 'google-github-actions/auth@v2'
+        uses: "google-github-actions/auth@v2"
         with:
-          workload_identity_provider: '${{secrets.WIF_PROVIDER}}'
-          service_account: '${{secrets.SERVICE_ACCOUNT}}'
+          workload_identity_provider: "${{secrets.WIF_PROVIDER}}"
+          service_account: "${{secrets.SERVICE_ACCOUNT}}"
 
       # Create Artifact Repository
       # - name: Create Artifact Repository
@@ -49,7 +49,6 @@ jobs:
           docker push "${{ vars.GCP_LOCATION }}-docker.pkg.dev/${{ vars.GCP_PROJECT_ID }}/${{ vars.ARTIFACT_REPOSITORY_NAME }}/${{ vars.GCP_SERVICE_NAME }}:${{ github.sha }}"
 
       # END - Docker auth and build
-
       # Deploy to Cloud Run
       - name: Deploy to Cloud Run
         id: deploy
