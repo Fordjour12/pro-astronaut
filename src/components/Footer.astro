@@ -1,0 +1,21 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer
+   class="lg:flex hidden flex-col justify-between gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t bg-accent bottom-0 left-0 absolute"
+>
+   <p class="text-xs text-muted-foreground">
+      ©{year} Portfolio. All rights reserved.
+   </p><p class="text-xs text-muted-foreground">
+      Design inspired <a
+         target="_blank"
+         href="https://dashfolio-neo.framer.website">from</a
+      >.
+   </p><p class="text-center text-xs font-medium text-muted-foreground">
+      Made with
+
+      <img class="inline-block w-4 h-4" alt="Astro logo" src="/favicon.svg" />
+      (Astro) by McCamble
+   </p>
+</footer>

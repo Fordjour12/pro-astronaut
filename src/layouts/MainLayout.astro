@@ -1,16 +1,29 @@
 ---
 import Navigation from "@components/Navigation.astro";
 import Layout from "./Layout.astro";
+import Footer from "@components/Footer.astro";
+import Particles from "@components/ui/particles";
 ---
 
 <Layout
-    title="Astronaut Portfolio | Bobie Fordjour McCamble "
-    description="This is a portfolio of my astronaut projects. I have worked on a number of projects in the past and I am always looking to learn new things."
+   title="Astronaut Portfolio | Bobie Fordjour McCamble "
+   description="This is a portfolio of my astronaut projects. I have worked on a number of projects in the past and I am always looking to learn new things."
 >
-    <Navigation />
-    <main
-        class="bg-background w-full overflow-y-auto flex-grow flex flex-col relative"
-    >
-        <slot />
-    </main>
+   <Navigation />
+   <main
+      class="bg-background w-full overflow-y-auto flex-grow flex flex-col relative"
+   >
+      <slot />
+
+      <Particles
+         className="absolute top-0 left-0 w-full h-full"
+         quantity={100}
+         staticity={20}
+         size={0.6}
+         color="#E6E6E6"
+         client:load
+      />
+
+      <Footer />
+   </main>
 </Layout>

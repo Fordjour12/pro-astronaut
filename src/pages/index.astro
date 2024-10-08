@@ -1,64 +1,68 @@
 ---
 import { Button } from "@/components/ui/button";
 import MainLayout from "../layouts/MainLayout.astro";
+import CardItem from "@components/CardItem.astro";
 ---
 
 <MainLayout>
-  <!-- <div>
-    <span>
-      <h1>Hello there 👋,</h1>
-      <p>I am Bobie Fordjour McCamble, a software engineer and entrepreneur.</p>
-    </span>
-  </div> -->
+   <div
+      class="mx-auto w-full overflow-y-auto max-w-[900px] px-4 flex-grow flex"
+   >
+      <div class="flex flex-col w-full relative flex-grow">
+         <div style="height: 1px;"></div>
+         <header class="lg:hidden"></header>
 
-  <div class="mx-auto w-full overflow-y-auto max-w-[900px] px-4 flex-grow flex">
-    <div class="flex flex-col w-full relative flex-grow">
-      <div style="height: 1px;"></div>
-      <header class="lg:hidden"></header>
+         <div class="h-24 w-full opacity-0"></div>
 
-      <div class="h-24 w-full opacity-0"></div>
+         <div class="space-y-8">
+            <div class="space-y-5">
+               <h1
+                  class="lg:text-5xl text-4xl font-semibold leading-[2.5rem] lg:leading-tight text-pretty"
+               >
+                  Hey there, I'm McCambe,<br /> A Full-Stack <span
+                     class="text-muted-foreground">Developer.</span
+                  >
+               </h1>
+               <h3 class="text-muted-foreground text-pretty">
+                  build high-impact, visually engaging web applications that
+                  align with business strategies and future goals. By blending
+                  attention to detail with a commitment to quality, I ensure
+                  every solution is designed to last and evolve.
+               </h3>
 
-      <div class="space-y-8">
-        <div class="space-y-5">
-          <h1
-            class="lg:text-5xl text-4xl font-semibold leading-[2.5rem] lg:leading-tight text-pretty"
-          >
-            Hey there, I'm McCambe,<br /> A Full-Stack <span
-              class="text-muted-foreground">Developer.</span
-            >
-          </h1>
-          <h3 class="text-muted-foreground text-pretty">
-            build high-impact, visually engaging web applications that align
-            with business strategies and future goals. By blending attention to
-            detail with a commitment to quality, I ensure every solution is
-            designed to last and evolve.
-          </h3>
+               <div class="flex items-center gap-3">
+                  <Button className="bg-accent text-white">About</Button>
 
-          <div class="flex items-center gap-3">
-            <Button className="bg-accent text-white">About</Button>
+                  <Button className="bg-accent text-primary opacity-50 gap-2">
+                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="0.8rem"
+                        height="0.8rem"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-copy"
+                     >
+                        <rect width="14" height="14" x="8" y="8" rx="2" ry="2">
+                        </rect>
+                        <path
+                           d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
+                        >
+                        </path>
+                     </svg>
+                     <span>Email</span>
+                  </Button>
+               </div>
+            </div>
 
-            <Button className="bg-accent text-primary opacity-50 gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="0.8rem"
-                height="0.8rem"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-copy"
-                ><rect width="14" height="14" x="8" y="8" rx="2" ry="2"
-                ></rect><path
-                  d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
-                ></path></svg
-              >
-              Email
-            </Button>
-          </div>
-        </div>
+            <!-- next div is for the particles -->
+            <div class="grid gap-6 grid-cols-1 lg:grid-cols-2 w-full">
+               <CardItem title="About" icon="Projects" />
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
+   </div>
 </MainLayout>
