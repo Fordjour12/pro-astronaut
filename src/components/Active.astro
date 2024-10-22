@@ -1,0 +1,42 @@
+---
+import { Badge } from "@/components/ui/badge";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card";
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <Card>
+        <CardContent>
+            <div class="w-full aspect-video relative group overflow-hidden">
+                <img
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    data-nimg="fill"
+                    class="object-cover group-hover:scale-105 transition-all duration-300"
+                    style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+                    sizes="100vw"
+                    srcset=""
+                    src=""
+                />
+            </div>
+            <CardHeader>
+                <CardTitle>Active-Acx</CardTitle>
+                <CardDescription
+                    className="text-xs text-muted-foreground line-clamp-2 "
+                >
+                    Active-Acx is a web application that helps you manage your
+                    active projects and tasks. It provides a user-friendly
+                    interface for organizing and tracking your projects, making
+                    it easier to stay organized and focused.
+                </CardDescription>
+                <Badge className="text-xs w-fit">Active-Acx</Badge>
+            </CardHeader>
+        </CardContent>
+    </Card>
+</div>

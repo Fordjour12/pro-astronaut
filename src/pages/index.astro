@@ -1,7 +1,10 @@
 ---
 import { Button } from "@/components/ui/button";
-import MainLayout from "../layouts/MainLayout.astro";
+import Active from "@components/Active.astro";
+import ActiveProject from "@components/ActiveProject.astro";
 import CardItem from "@components/CardItem.astro";
+import Re from "@components/Re.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
@@ -58,9 +61,27 @@ import CardItem from "@components/CardItem.astro";
                </div>
             </div>
 
+            <!-- New Active Projects -->
+            <ActiveProject />
+
+            <!-- New Active Projects Test -->
+            <Active />
+
+            <!-- Thoughts & Project Facts/Articles -->
+            <Re />
+
             <!-- next div is for the particles -->
             <div class="grid gap-6 grid-cols-1 lg:grid-cols-2 w-full">
-               <CardItem title="About" icon="Projects" />
+               <CardItem
+                  title="Facts"
+                  icon="Facts"
+                  subTitle="Jump alone and never look back"
+               />
+               <CardItem
+                  title="Projects"
+                  icon="Projects"
+                  subTitle="See what I have done so far"
+               />
             </div>
          </div>
       </div>

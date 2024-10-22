@@ -1,0 +1,114 @@
+---
+import {
+    Card,
+    CardContent,
+    CardFooter,
+    CardHeader,
+} from "@/components/ui/card";
+
+import { Input } from "@components/ui/input";
+import { Button } from "./ui/button";
+---
+
+<Card>
+    <CardHeader>
+        <h3 class="font-medium text-lg">Read</h3><p
+            class="text-muted-foreground font-medium text-sm"
+        >
+            Sharing experiences, knowledge and videos on system design &amp;
+            tech.
+        </p>
+    </CardHeader>
+    <CardContent>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-1 px-4 pb-4">
+            <a
+                class="flex items-center gap-3 group z-20 w-full cursor-pointer relative px-2 py-2"
+                href="/thoughts/best-coding-practices-for-modern-web-development"
+                ><div
+                    class="w-full h-full z-10 bg-accent absolute top-0 left-0 rounded-md opacity-0 border group-hover:opacity-100 group-hover:scale-[1.01] transition-all duration-500"
+                >
+                </div><div
+                    class="bg-primary flex items-center justify-center size-10 rounded-md z-20 aspect-square"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1rem"
+                        height="1rem"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-chart-bar"
+                        ><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path
+                            d="M7 16h8"></path><path d="M7 11h12"></path><path
+                            d="M7 6h3"></path></svg
+                    >
+                </div><div class="z-20 w-[80%]">
+                    <h3 class="font-medium text-sm w-full truncate">
+                        Best Coding Practices for Modern Web Development
+                    </h3><p
+                        class="text-muted-foreground truncate w-full font-medium text-xs"
+                    >
+                        A comprehensive guide to the best coding practices for
+                        modern web development, aimed at improving code quality,
+                        maintainability, and performance.
+                    </p>
+                </div></a
+            ><a
+                class="flex items-center gap-3 group z-20 w-full cursor-pointer relative px-2 py-2"
+                href="/thoughts/building-mdx-blog-with-contentlayer-and-nextjs"
+                ><div
+                    class="w-full h-full z-10 bg-accent absolute top-0 left-0 rounded-md opacity-0 border group-hover:opacity-100 group-hover:scale-[1.01] transition-all duration-500"
+                >
+                </div><div
+                    class="bg-primary flex items-center justify-center size-10 rounded-md z-20 aspect-square"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1rem"
+                        height="1rem"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-chart-bar"
+                        ><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path
+                            d="M7 16h8"></path><path d="M7 11h12"></path><path
+                            d="M7 6h3"></path></svg
+                    >
+                </div><div class="z-20 w-[80%]">
+                    <h3 class="font-medium text-sm w-full truncate">
+                        Building MDX Blog with Contentlayer and Next.js
+                    </h3><p
+                        class="text-muted-foreground truncate w-full font-medium text-xs"
+                    >
+                        The world of digital design isn't limited to creating
+                        for clients. With the right entrepreneurial spirit,
+                        designers can explore various avenues to monetize their
+                        skills and knowledge.
+                    </p>
+                </div></a
+            >
+        </div>
+    </CardContent>
+    <CardFooter className="bg-accent rounded-b-xl p-6">
+        <div class="w-full">
+            <h3 class="text-sm">Join 1K+ Readers</h3><p
+                class="text-muted-foreground font-medium text-xs"
+            >
+                Sent out every two weeks. No spam.
+            </p>
+        </div><form
+            class="flex flex-col w-full lg:flex-row items-center gap-2 lg:gap-3"
+        >
+            <Input placeholder="Your E-mail" type="email" name="email" />
+            <Button className="" variant={"secondary"} type="submit">
+                Subscribe
+            </Button>
+        </form>
+    </CardFooter>
+</Card>
